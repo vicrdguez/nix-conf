@@ -43,6 +43,7 @@
       minio-client
       cowsay
       alacritty
+      just
     ];
   };
 
