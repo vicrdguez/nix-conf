@@ -1,0 +1,6 @@
+{ vars, ...}:
+{
+  imports = [
+    ./fish
+  ];
+}
