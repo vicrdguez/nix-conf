@@ -19,12 +19,20 @@ hm-switch:
     git rebase tmp
     git branch -D tmp
 
-test:
-    exit -1
-    @echo "this should be printed"
+# Same stuff but for nix-darwin
+
 [macos]
 dw-build:
+    darwin-rebuild switch --flake .
+    git switch -c tmp
+    git add --all
+    git commit -m "build: {{uuid()}}"
 
 [macos]
 dw-switch:
-
+    darwin-rebuild switch --flake .
+    git reset --soft main
+    git commit -e
+    git switch main
+    git rebase tmp
+    git branch -D tmp
