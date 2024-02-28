@@ -44,6 +44,16 @@
       cowsay
       alacritty
       just
+      neovim
+      eza
+      fd
+      zellij
+      kcat
+      zk
+      # wezterm
+      raycast
+      bat
+      coreutils
     ];
   };
 

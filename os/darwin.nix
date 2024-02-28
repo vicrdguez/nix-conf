@@ -1,11 +1,33 @@
 { pkgs, vars, ... }: {
-  homebrew = { };
+  homebrew = {
+    enable = true;
+    taps = [
+      "FelixKratz/formulae"
+      "homebrew/cask-fonts"
+    ];
+    casks = [
+      # "wezterm"
+    ];
+    brews = [
+      "borders"
+      "jr"
+      "mvndaemon/homebrew-mvnd/mvnd"
+      "chezmoi"
+    ];
+  };
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
   # Darwin configs
-  services = { nix-daemon.enable = true; };
+  services = {
+    nix-daemon.enable = true;
+    yabai = {
+      enable = true;
+      enableScriptingAddition = true;
+    };
+    skhd.enable = true;
+  };
   system = {
     defaults = {
       dock.autohide = true;
