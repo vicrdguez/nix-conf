@@ -7,10 +7,15 @@
     , ...
     } @ inputs:
     let
-      vars = import ./vars.nix;
+      vars = (lib.evalModules { modules = [ ./lib/vars ]; }).config;
+      darwinSystems = [
+        "x86_64-darwin"
+      ];
+      linuxSystems = [ ];
+      allSystems = darwinSystems ++ linuxSystems;
       lib = nixpkgs.lib // home-manager.lib;
       clib = import ./lib { inherit lib inputs vars; };
-      pkgsFor = lib.genAttrs vars.allSystems (system:
+      pkgsFor = lib.genAttrs allSystems (system:
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
@@ -22,7 +27,7 @@
       };
 
       homeConfigurations = {
-        "${vars.user}@C02GN16H1PG2" = clib.mkHome pkgsFor.x86_64-darwin;
+        "${vars.user.name}@C02GN16H1PG2" = clib.mkHome pkgsFor.x86_64-darwin;
       };
     };
 

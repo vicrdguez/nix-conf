@@ -1,9 +1,9 @@
-{ vars, ... }:
+{ vars, config, ... }:
 {
   programs.git = {
     enable = true;
-    userEmail = vars.email;
-    userName = vars.user;
+    userEmail = config.user.email;
+    userName = config.user.name;
     extraConfig = {
       pretty = {
         lc = "format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n";

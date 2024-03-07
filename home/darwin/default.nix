@@ -4,10 +4,11 @@
     ./wm
   ];
 
-  yabai.enable = true;
+  yabai.enable = config.windowManager.enable;
 
   home.packages = with pkgs; [
     # The bloated all-mighty editor
     emacs29-macport
+    raycast
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }: {
+{ pkgs, vars, config, ... }: {
   homebrew = {
     enable = true;
     taps = [
@@ -13,6 +13,7 @@
       "jr"
       "mvndaemon/homebrew-mvnd/mvnd"
       "chezmoi"
+      "bashly"
     ];
   };
 
@@ -23,10 +24,10 @@
   services = {
     nix-daemon.enable = true;
     yabai = {
-      enable = true;
+      enable = config.windowManager.enable;
       enableScriptingAddition = true;
     };
-    skhd.enable = true;
+    skhd.enable = config.windowManager.enable;
   };
   system = {
     defaults = {

@@ -1,15 +1,9 @@
 { vars, lib, config, ... }:
 let
-  colors = vars.colorschemes.${config.colorscheme};
+  # colors = vars.colorschemes.${config.colorscheme};
+  colors = config.theme.scheme;
 in
 {
-  options = {
-    colorscheme = lib.mkOption {
-      default = "kanagawa_dragon";
-      type = lib.types.str;
-      description = "fzf colorscheme";
-    };
-  };
   config =
     {
       programs.fzf = {

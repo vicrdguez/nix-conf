@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./git
@@ -7,8 +7,8 @@
     ./starship
   ];
   home = {
-    username = vars.user;
-    homeDirectory = "/Users/${vars.user}";
+    username = config.user.name;
+    homeDirectory = "/Users/${config.user.name}";
     stateVersion = "23.05";
     # this are packages without particular configuration
     packages = with pkgs; [
@@ -51,9 +51,10 @@
       kcat
       zk
       # wezterm
-      raycast
       bat
       coreutils
+      gh
+      # bashly
     ];
   };
 
