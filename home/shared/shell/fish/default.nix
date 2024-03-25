@@ -1,4 +1,10 @@
-{ vars, ... }:
+{ pkgs, vars, darwin, ... }:
+let
+  brewPrefix =
+    if pkgs.stdenv.hostPlatform.isAarch64 then "/opt/homebrew/bin"
+    else "/usr/local/bin";
+  brewEnvInit = if true then ''eval (${brewPrefix}/brew shellenv)'' else '''';
+in
 {
   programs.fish = {
     enable = true;
@@ -25,6 +31,7 @@
         end
         set -gx EDITOR nvim
         set -gx ZK_NOTEBOOK_DIR /Users/vrodriguez/dev/kb/braindump
+        ${brewEnvInit}
       '';
     interactiveShellInit =
       /*

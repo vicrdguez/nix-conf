@@ -55,6 +55,7 @@
       coreutils
       gh
       # bashly
+      flameshot
     ];
   };
 

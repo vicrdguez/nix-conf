@@ -41,6 +41,7 @@ rec {
       ];
       extraSpecialArgs = {
         inherit vars;
+        inherit darwin;
       };
     };
 

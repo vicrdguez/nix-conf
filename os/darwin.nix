@@ -1,4 +1,5 @@
 { pkgs, vars, config, ... }: {
+  # This won't install hombrew itself. Needs to be installed separately
   homebrew = {
     enable = true;
     taps = [
@@ -7,13 +8,13 @@
     ];
     casks = [
       # "wezterm"
+      "flameshot"
     ];
     brews = [
       "borders"
       "jr"
       "mvndaemon/homebrew-mvnd/mvnd"
       "chezmoi"
-      "bashly"
     ];
   };
 
@@ -54,9 +55,12 @@
       EDITOR = "nvim";
       ZK_NOTEBOOK_DIR = "/Users/vrodriguez/dev/kb/braindump";
     };
+    extraInit = ''
+      eval "$(${config.homebrew.brewPrefix}/brew shellenv)"
+    '';
   };
   # Needed to fix weird bug that appears to be present only on darwin
   # https://github.com/nix-community/home-manager/issues/4026
   # https://discourse.nixos.org/t/support-request-conflicting-definition-of-homedirectory-while-integrating-nix-darwin-and-home-manager/13927/5
-  users.users.${vars.user}.home = "/Users/${vars.user}";
+  users.users.${config.user.name}.home = "/Users/${config.user.name}";
 }
