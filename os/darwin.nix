@@ -69,6 +69,10 @@
       eval "$(${config.homebrew.brewPrefix}/brew shellenv)"
     '';
   };
+  fonts = {
+    fontDir.enable = true;
+    fonts = [pkgs.iosevka];
+  };
   # Needed to fix weird bug that appears to be present only on darwin
   # https://github.com/nix-community/home-manager/issues/4026
   # https://discourse.nixos.org/t/support-request-conflicting-definition-of-homedirectory-while-integrating-nix-darwin-and-home-manager/13927/5

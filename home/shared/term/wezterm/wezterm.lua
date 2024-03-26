@@ -48,10 +48,32 @@ config.window_background_opacity = 1
 
 -- Fonts
 -- config.font = wezterm.font("Iosevka Term")
-config.font = wezterm.font("Iosevka Term", {
-    weight = "Medium",
-    -- stretch = "SemiExpanded"
-})
+--config.font = wezterm.font("Iosevka", {
+--    weight = "Heavy",
+--    -- stretch = "SemiExpanded"
+--})
+config.font = wezterm.font 'Iosevka Medium'
+--config.font = wezterm.font( "Iosevka", {
+--	weight = "Black",
+--	stretch = "Normal",
+--	style = "Normal"
+--})
+config.font_rules = {
+  {
+	  intensity = 'Bold',
+	  italic = true,
+	  font = wezterm.font {
+		  family = "Iosevka",
+		  weight = "Black",
+		  style = 'Oblique'
+	  }
+  },
+  {
+	  intensity = 'Bold',
+	  italic = false,
+	  font = wezterm.font("Iosevka Heavy")
+  }
+}
 config.font_size = 16
 -- ]]
 
