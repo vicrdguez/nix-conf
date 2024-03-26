@@ -40,3 +40,4 @@ switch:
     git switch main
     git rebase tmp
     git branch -D tmp
+    git push
