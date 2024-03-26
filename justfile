@@ -14,6 +14,18 @@ hm-switch: && switch
 # Same stuff but for nix-darwin
 
 [macos]
+dw-bootstrap:
+    echo 'Installing homebrew'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo "Setting up nix-darwin"
+    nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake . 
+    # darwin-rebuild switch --flake .
+    echo "Setting up home-manager"
+    nix run home-manager/master -- switch --flake .
+    # home-manager switch --flake .
+
+[macos]
 dw-build: build
     darwin-rebuild switch --flake .
 

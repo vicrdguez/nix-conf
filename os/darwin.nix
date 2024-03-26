@@ -7,7 +7,7 @@
       "homebrew/cask-fonts"
     ];
     casks = [
-      # "wezterm"
+      "wezterm"
       "flameshot"
     ];
     brews = [
@@ -17,9 +17,12 @@
       "chezmoi"
     ];
   };
-
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    experimental-features = nix-command flakes repl-flake
+    bash-prompt-prefix = (nix:$name)\040
+    extra-nix-path = nixpkgs=flake:nixpkgs
+    #upgrade-nix-store-path-url = https://install.determinate.systems/nix-upgrade/stable/universal
   '';
   # Darwin configs
   services = {
@@ -30,15 +33,22 @@
     };
     skhd.enable = config.windowManager.enable;
   };
+  programs.zsh.enable = true;
+  nixpkgs.hostPlatform = pkgs.system;
   system = {
     defaults = {
-      dock.autohide = true;
+      dock = {
+        autohide = true;
+	mru-spaces = false;
+      };
+      spaces.spans-displays = true;
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
       };
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
+	AppleInterfaceStyle = "Dark";
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
       };

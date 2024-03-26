@@ -9,7 +9,8 @@
     let
       vars = (lib.evalModules { modules = [ ./lib/vars ]; }).config;
       darwinSystems = [
-        "x86_64-darwin"
+        #"x86_64-darwin"
+	"aarch64-darwin"
       ];
       linuxSystems = [ ];
       allSystems = darwinSystems ++ linuxSystems;
@@ -23,11 +24,13 @@
     in
     {
       darwinConfigurations = {
-        "C02GN16H1PG2" = clib.mkMacosSystem pkgsFor.x86_64-darwin;
+        #"C02GN16H1PG2" = clib.mkMacosSystem pkgsFor.x86_64-darwin;
+        "MYGDH633P6" = clib.mkMacosSystem pkgsFor.aarch64-darwin;
       };
 
       homeConfigurations = {
-        "${vars.user.name}@C02GN16H1PG2" = clib.mkHome pkgsFor.x86_64-darwin;
+        #"${vars.user.name}@C02GN16H1PG2" = clib.mkHome pkgsFor.x86_64-darwin;
+        "${vars.user.name}@MYGDH633P6" = clib.mkHome pkgsFor.aarch64-darwin;
       };
     };
 

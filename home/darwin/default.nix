@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     # The bloated all-mighty editor
-    emacs29-macport
+    #emacs29-macport
     raycast
   ];
 }
