@@ -1,63 +1,23 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./git
+    ./cli-tools
     ./shell
-    ./fzf
-    ./starship
+    ./term
   ];
+
   home = {
     username = config.user.name;
     homeDirectory = "/Users/${config.user.name}";
     stateVersion = "23.05";
     # this are packages without particular configuration
-    packages = with pkgs; [
-      ripgrep
-      jq
-      # For peek.nvim
-      deno
-      # Nice nix formatting
-      alejandra
-      nixpkgs-fmt
-      # My braindump lives here
-      obsidian
-      # Slack client for all things company messaging slack
-      slack
-      # All things music
-      spotify
-      # Confluent own cli tool
-      confluent-cli
-      # Golang language server
-      gopls
-      # packages to display images on neovim.
-      luajitPackages.magick
-      imagemagick
-      ueberzugpp
-      # to manage runtime versions
-      mise
-      # use your preferred shell when using nix develop
-      nix-your-shell
-      # Java packaging
-      gradle
-      # min-io cli client
-      minio-client
-      cowsay
-      alacritty
-      just
-      neovim
-      eza
-      fd
-      zellij
-      kcat
-      zk
-      # wezterm
-      bat
-      coreutils
-      gh
-      # bashly
-      flameshot
-    ];
+    packages = import ./packages.nix { inherit pkgs; };
   };
 
+  term.wezterm = true;
+  cli = {
+      # enable cli tools, all are enabled by default so this is more 
+      # tailored to disable things
+  };
   programs.home-manager.enable = true;
 }

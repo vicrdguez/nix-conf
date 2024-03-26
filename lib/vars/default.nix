@@ -26,6 +26,16 @@
       };
       enable = lib.mkEnableOption "window manager";
     };
+    term = {
+      wezterm = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      alacritty = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+    };
   };
 
   config = {

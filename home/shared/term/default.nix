@@ -1,8 +1,9 @@
 { pkgx, lib, config, ... }:
 {
-  options = { };
-  config = {
-    programs.alacritty = { 
-        };
-  };
+  imports = [
+    ./wezterm
+    ./alacritty
+  ];
+    wezterm.enable = config.term.wezterm;
+    # alacritty.enable = config.term.alacritty;
 }
