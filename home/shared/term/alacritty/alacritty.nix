@@ -1,2 +1,2 @@
-{pkgs, lib, config, ...}:
-{}
+{ pkgs, lib, config, ... }:
+{ }

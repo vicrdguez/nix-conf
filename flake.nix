@@ -10,7 +10,7 @@
       vars = (lib.evalModules { modules = [ ./lib/vars ]; }).config;
       darwinSystems = [
         #"x86_64-darwin"
-	"aarch64-darwin"
+        "aarch64-darwin"
       ];
       linuxSystems = [ ];
       allSystems = darwinSystems ++ linuxSystems;
@@ -20,6 +20,7 @@
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = [ inputs.nvim-conf.overlays.default ];
         });
     in
     {
@@ -44,6 +45,10 @@
     };
     darwin = {
       url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvim-conf = {
+      url = "github:vicrdguez/nvim-conf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

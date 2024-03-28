@@ -4,6 +4,6 @@
     ./wezterm
     ./alacritty
   ];
-    wezterm.enable = config.term.wezterm;
-    # alacritty.enable = config.term.alacritty;
+  wezterm.enable = config.term.wezterm;
+  # alacritty.enable = config.term.alacritty;
 }

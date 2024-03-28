@@ -34,7 +34,7 @@ rec {
       black = "#0d0c0c";
       red = "#c4746e";
       green = "#8a9a7b";
-      green_2= "#87a987";
+      green_2 = "#87a987";
       yellow = "#c4b28a";
       blue = "#8ba4b0";
       magenta = "#a292a3";

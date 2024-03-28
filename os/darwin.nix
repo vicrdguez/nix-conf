@@ -9,6 +9,8 @@
     casks = [
       "wezterm"
       "flameshot"
+      "firefox"
+      "brave-browser"
     ];
     brews = [
       "borders"
@@ -39,16 +41,16 @@
     defaults = {
       dock = {
         autohide = true;
-	mru-spaces = false;
+        mru-spaces = false;
       };
-      spaces.spans-displays = true;
+      spaces.spans-displays = false;
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
       };
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
-	AppleInterfaceStyle = "Dark";
+        AppleInterfaceStyle = "Dark";
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
       };
@@ -71,7 +73,7 @@
   };
   fonts = {
     fontDir.enable = true;
-    fonts = [pkgs.iosevka];
+    fonts = [ pkgs.iosevka ];
   };
   # Needed to fix weird bug that appears to be present only on darwin
   # https://github.com/nix-community/home-manager/issues/4026

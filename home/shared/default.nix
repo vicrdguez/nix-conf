@@ -4,6 +4,7 @@
     ./cli-tools
     ./shell
     ./term
+    ./apps
   ];
 
   home = {
@@ -16,8 +17,8 @@
 
   term.wezterm = true;
   cli = {
-      # enable cli tools, all are enabled by default so this is more 
-      # tailored to disable things
+    # enable cli tools, all are enabled by default so this is more 
+    # tailored to disable things
   };
   programs.home-manager.enable = true;
 }

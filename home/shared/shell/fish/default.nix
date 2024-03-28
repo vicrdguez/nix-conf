@@ -16,6 +16,7 @@ in
       tf = "terraform";
       mcp = "mvnd clean package";
       mvn = "mvnd";
+      ll = "exa -l";
     };
     shellInit =
       /*
