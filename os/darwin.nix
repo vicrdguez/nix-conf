@@ -36,23 +36,28 @@
     skhd.enable = config.windowManager.enable;
   };
   programs.zsh.enable = true;
+  programs.fish.enable = true;
   nixpkgs.hostPlatform = pkgs.system;
+  # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
     defaults = {
       dock = {
         autohide = true;
         mru-spaces = false;
+        expose-animation-duration = 0.0;
       };
       spaces.spans-displays = false;
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
       };
+      universalaccess.reduceMotion = true;
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         AppleInterfaceStyle = "Dark";
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
+        NSUseAnimatedFocusRing = false;
       };
     };
     keyboard = {
