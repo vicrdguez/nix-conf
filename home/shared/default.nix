@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 {
   imports = [
     ./cli-tools
@@ -14,11 +14,16 @@
     # this are packages without particular configuration
     packages = import ./packages.nix { inherit pkgs; };
   };
+  xdg.enable = true;
 
   term.wezterm = true;
   cli = {
     # enable cli tools, all are enabled by default so this is more 
     # tailored to disable things
+  };
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
   programs.home-manager.enable = true;
 }

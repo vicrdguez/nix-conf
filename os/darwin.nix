@@ -11,6 +11,7 @@
       "flameshot"
       "firefox"
       "brave-browser"
+      "nikitabobko/tap/aerospace"
     ];
     brews = [
       "borders"
@@ -30,14 +31,21 @@
   services = {
     nix-daemon.enable = true;
     yabai = {
-      enable = config.windowManager.enable;
+      #enable = config.windowManager.enable;
+      enable = false;
       enableScriptingAddition = true;
     };
-    skhd.enable = config.windowManager.enable;
+    #skhd.enable = config.windowManager.enable;
+    skhd.enable = false;
   };
   programs.zsh.enable = true;
   programs.fish.enable = true;
-  nixpkgs.hostPlatform = pkgs.system;
+  nixpkgs = {
+    hostPlatform = pkgs.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
   # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
     defaults = {
@@ -58,6 +66,7 @@
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
         NSUseAnimatedFocusRing = false;
+        NSWindowShouldDragOnGesture = true;
       };
     };
     keyboard = {

@@ -176,7 +176,7 @@
         default_layout "main-compact"
         mouse_mode true
         //scrollback_editor "/Users/vrodriguez/.nix-profile/bin/nvim"
-        scrollback_editor "${pkgs.neovim}/bin/nvim"
+        scrollback_editor "${pkgs.nvim-custom}/bin/nvim"
       '';
 
       ".config/zellij/layouts/main-compact.kdl".text = /*kdl*/''

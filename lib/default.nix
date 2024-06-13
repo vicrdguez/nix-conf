@@ -25,7 +25,7 @@ rec {
         };
       };
 
-  mkHome = pkgs:
+  mkHome = { pkgs, extraModules }:
     let
       sharedModules = ../home/shared;
       darwin = isDarwin pkgs.system;
@@ -38,7 +38,7 @@ rec {
         sharedModules
         sysModules
         ./vars
-      ];
+      ] ++ extraModules;
       extraSpecialArgs = {
         inherit vars;
         inherit darwin;

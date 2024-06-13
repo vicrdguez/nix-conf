@@ -31,7 +31,11 @@
 
       homeConfigurations = {
         #"${vars.user.name}@C02GN16H1PG2" = clib.mkHome pkgsFor.x86_64-darwin;
-        "${vars.user.name}@MYGDH633P6" = clib.mkHome pkgsFor.aarch64-darwin;
+        "${vars.user.name}@MYGDH633P6" = clib.mkHome {
+          pkgs = pkgsFor.aarch64-darwin;
+          extraModules = [];
+          #extraModules = [ inputs.nvim-conf.modules.home-manager ];
+        };
       };
     };
 
