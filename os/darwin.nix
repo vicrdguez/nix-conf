@@ -5,6 +5,8 @@
     taps = [
       "FelixKratz/formulae"
       "homebrew/cask-fonts"
+      ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
+      "cfergeau/crc"
     ];
     casks = [
       "wezterm"
@@ -18,6 +20,8 @@
       "jr"
       "mvndaemon/homebrew-mvnd/mvnd"
       "chezmoi"
+      ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
+      "vfkit"
     ];
   };
   nix.extraOptions = ''
