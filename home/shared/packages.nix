@@ -44,5 +44,5 @@ with pkgs; [
   gh
   # bashly
   flameshot
-  podman
+  # podman
 ]

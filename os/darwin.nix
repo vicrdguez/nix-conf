@@ -6,7 +6,7 @@
       "FelixKratz/formulae"
       "homebrew/cask-fonts"
       ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
-      "cfergeau/crc"
+      # "cfergeau/crc"
     ];
     casks = [
       "wezterm"
@@ -21,7 +21,7 @@
       "mvndaemon/homebrew-mvnd/mvnd"
       "chezmoi"
       ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
-      "vfkit"
+     # "vfkit"
     ];
   };
   nix.extraOptions = ''
