@@ -17,6 +17,8 @@ in
       mcp = "mvnd clean package";
       mvn = "mvnd";
       ll = "exa -l";
+      la = "exa -la";
+      zat = "zathura";
     };
     shellInit =
       /*
@@ -39,6 +41,9 @@ in
         fish
         */
       ''
+        # Some light theming
+        set -g fish_color_command green
+
         eval (zellij setup --generate-auto-start fish | string collect)
 
         nix-your-shell fish | source

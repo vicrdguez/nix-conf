@@ -53,3 +53,10 @@ switch:
     git rebase tmp
     git branch -D tmp
     git push
+
+update input:
+    nix flake lock --update-input {{input}}
+
+update-all:
+    nix flake update
+

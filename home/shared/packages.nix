@@ -45,4 +45,5 @@ with pkgs; [
   # bashly
   flameshot
   # podman
+  # zathura
 ]

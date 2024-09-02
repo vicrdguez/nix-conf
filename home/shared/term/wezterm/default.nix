@@ -24,10 +24,10 @@
                     cursor_fg = "${colors.fg}",
                     cursor_border = "${colors.fg}",
 
-                    selection_fg = "${colors.fg}",
+                    selection_fg = "${colors.bg}",
                     selection_bg = "${colors.selection}",
 
-                    scrollbar_thumb = "${colors.bg}",
+                    scrollbar_thumb = "${colors.black}",
                     split = "${colors.bg}",
 
                     ansi = {

@@ -15,8 +15,8 @@
           enable = true;
           enableFishIntegration = true;
           colors = {
-            bg = colors.bg;
-            "bg+" = colors.black;
+            bg = colors.black;
+            "bg+" = colors.bg;
             fg = colors.fg;
             "fg+" = colors.fg_bright;
             spinner = colors.green;
@@ -28,6 +28,14 @@
             prompt = colors.yellow;
             "hl+" = colors.red;
           };
+          defaultOptions = [
+            "--layout reverse"
+          ];
+          defaultCommand = "fd --type f --exclude .git --hidden";
+          fileWidgetCommand = "fd --type f --exclude .git --hidden";
+          fileWidgetOptions = [
+            "--preview 'bat {}'"
+          ];
         };
     };
 }
