@@ -8,7 +8,7 @@ default:
 hm-build: build
     home-manager switch --flake .
 
-hm-switch: && switch
+hm-switch: build && switch
     home-manager switch --flake .
 
 # Same stuff but for nix-darwin
