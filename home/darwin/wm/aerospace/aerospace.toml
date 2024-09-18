@@ -119,8 +119,8 @@ alt-comma = 'fullscreen'
 alt-shift-f = 'macos-native-fullscreen on'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-ctrl-k = 'resize smart -50'
-alt-ctrl-j = 'resize smart +50'
+alt-ctrl-k = 'resize smart +50'
+alt-ctrl-j = 'resize smart -50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -223,4 +223,8 @@ run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
 run = ['layout floating']
