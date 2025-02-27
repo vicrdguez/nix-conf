@@ -10,7 +10,7 @@
   home = {
     username = config.user.name;
     homeDirectory = "/Users/${config.user.name}";
-    stateVersion = "23.05";
+    stateVersion = "25.05";
     # this are packages without particular configuration
     packages = import ./packages.nix { inherit pkgs; };
   };

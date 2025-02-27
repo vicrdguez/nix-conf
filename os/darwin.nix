@@ -1,5 +1,6 @@
 { pkgs, vars, config, ... }: {
   # This won't install hombrew itself. Needs to be installed separately
+  ids.gids.nixbld = 30000;
   homebrew = {
     enable = true;
     taps = [
@@ -21,19 +22,18 @@
       "mvndaemon/homebrew-mvnd/mvnd"
       "chezmoi"
       ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
-     # "vfkit"
+      # "vfkit"
     ];
   };
   nix.extraOptions = ''
     experimental-features = nix-command flakes
-    experimental-features = nix-command flakes repl-flake
+    experimental-features = nix-command flakes
     bash-prompt-prefix = (nix:$name)\040
     extra-nix-path = nixpkgs=flake:nixpkgs
     #upgrade-nix-store-path-url = https://install.determinate.systems/nix-upgrade/stable/universal
   '';
   # Darwin configs
   services = {
-    nix-daemon.enable = true;
     yabai = {
       #enable = config.windowManager.enable;
       enable = false;
@@ -52,6 +52,7 @@
   };
   # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
+    stateVersion = 6;
     defaults = {
       dock = {
         autohide = true;
@@ -80,7 +81,6 @@
   };
   environment = {
     shells = with pkgs; [ bash zsh fish ];
-    loginShell = pkgs.zsh;
     variables = {
       EDITOR = "nvim";
       ZK_NOTEBOOK_DIR = "/Users/vrodriguez/dev/kb/braindump";
@@ -90,8 +90,7 @@
     '';
   };
   fonts = {
-    fontDir.enable = true;
-    fonts = [ pkgs.iosevka ];
+    packages = [ pkgs.iosevka ];
   };
   # Needed to fix weird bug that appears to be present only on darwin
   # https://github.com/nix-community/home-manager/issues/4026
