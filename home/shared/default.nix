@@ -1,6 +1,7 @@
 { pkgs, lib, config, ... }:
 {
   imports = [
+    ./custom-tools
     ./cli-tools
     ./shell
     ./term

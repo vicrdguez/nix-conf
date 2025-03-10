@@ -1,0 +1,35 @@
+name: ntpl
+help: Shortcuts for my Nix flake templates
+version: 0.1.0
+
+commands:
+- name: show
+  alias: s
+  help: Show templates
+  # args:
+  # - name: src
+  #   help: URL of the templates repo (defaults to mine)
+  flags:
+  - long: --source
+    short: -l
+    arg: src
+    help: URL of the templates repo (defaults to mine)
+  examples:
+  - ntpl show
+  - ntpl show --source 'github:<user>/<repo-name>'
+
+- name: init
+  alias: i
+  help: Init a template
+  args:
+  - name: template
+    required: true
+    help: Template name
+  flags:
+  - long: --source
+    arg: src
+    short: -l
+    help: URL of the templates repo (defaults to mine)
+  examples:
+  - ntpl init go-basic
+  - ntpl init go-basic --source 'github:<user>/<repo-name>'
