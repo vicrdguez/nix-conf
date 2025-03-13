@@ -11,6 +11,7 @@
       };
       format.pretty = "lf";
       push.autoSetupRemote = true;
+      init.defaultBranch = "main";
     };
     aliases = {
       # log
