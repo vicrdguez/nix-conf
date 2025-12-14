@@ -41,13 +41,14 @@ in
         fish
         */
       ''
-        # Some light theming
-        set -g fish_color_command green
+          # Some light theming
+          set -g fish_color_command green
 
-        eval (zellij setup --generate-auto-start fish | string collect)
+          eval (zellij setup --generate-auto-start fish | string collect)
 
-        nix-your-shell fish | source
-        /Users/vrodriguez/.nix-profile/bin/mise activate fish | source
+          nix-your-shell fish | source
+        # TODO fix path, dependent on machine
+        #/Users/vrodriguez/.nix-profile/bin/mise activate fish | source
       '';
   };
 }

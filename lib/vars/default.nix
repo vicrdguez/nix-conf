@@ -31,6 +31,10 @@
         type = lib.types.bool;
         default = false;
       };
+      ghostty = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
       alacritty = lib.mkOption {
         type = lib.types.bool;
         default = false;
@@ -40,7 +44,8 @@
 
   config = {
     user = {
-      name = "vrodriguez";
+      #name = "vrodriguez";
+      name = "vrod"; # TODO, make this configurable, differs from machine to machine
       fullName = "Victor Rodriguez";
       email = "contact@vicrodriguez.dev";
     };

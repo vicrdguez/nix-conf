@@ -5,26 +5,29 @@
     enable = true;
     taps = [
       "FelixKratz/formulae"
-      "homebrew/cask-fonts"
+      #"homebrew/cask-fonts" # TODO fails in new sytem, find solution
       ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
       # "cfergeau/crc"
     ];
     casks = [
       "wezterm"
+      "ghostty"
       "flameshot"
       "firefox"
       "brave-browser"
       "nikitabobko/tap/aerospace"
+      "raycast"
     ];
     brews = [
-      "borders"
+      #"borders" ## now on nixpkgs (jankyBorders)
       "jr"
-      "mvndaemon/homebrew-mvnd/mvnd"
-      "chezmoi"
+      #"mvndaemon/homebrew-mvnd/mvnd" # TODO now on nixpkgs
+      #"chezmoi"
       ## for Podman, until this is fixed: https://github.com/NixOS/nixpkgs/issues/305868
       # "vfkit"
     ];
   };
+  nix.enable = false; # TODO make this configurable, just in case not using determinate nix
   nix.extraOptions = ''
     experimental-features = nix-command flakes
     experimental-features = nix-command flakes
@@ -52,6 +55,7 @@
   };
   # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
+    primaryUser = "vrod"; # TODO make this configurable, will depend on the machine
     stateVersion = 6;
     defaults = {
       dock = {

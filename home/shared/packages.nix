@@ -12,7 +12,7 @@ with pkgs; [
   # Slack client for all things company messaging slack
   slack
   # All things music
-  spotify
+  # spotify
   # Confluent own cli tool
   confluent-cli
   # Golang language server
@@ -46,4 +46,5 @@ with pkgs; [
   flameshot
   # podman
   # zathura
+  #ghostty-bin
 ]
