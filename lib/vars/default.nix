@@ -53,7 +53,7 @@
     windowManager.name = if lib.hasSuffix "darwin" pkgs.system then "yabai" else "";
     windowManager.enable = lib.mkDefault true;
     # see ./themes/default.nix for theme defaults not mentioned here
-    # theme.name = "catppuccin_gruvbox";
-    theme.name = "vague";
+    # theme.name = "kanagawa_dragon";
+    theme.name = "catppuccin_gruvbox";
   };
 }
