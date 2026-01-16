@@ -32,7 +32,8 @@ with pkgs; [
   cowsay
   alacritty
   just
-  nvim-custom-fzf
+  # nvim-custom-fzf
+  neovim
   eza
   fd
   zellij
