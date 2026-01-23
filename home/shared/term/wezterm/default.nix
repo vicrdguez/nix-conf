@@ -19,7 +19,8 @@
             if name == "vague"
             then
             /*lua*/''
-                        return {
+              return {
+                colors = {
               		foreground = "#cdcdcd",
               		background = "#141415",
 
@@ -86,7 +87,8 @@
               			},
               			inactive_tab_edge = "#252530",
               		},
-              	}
+                }
+              }
             ''
             else
             /*lua*/''
