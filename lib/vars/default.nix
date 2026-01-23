@@ -49,6 +49,6 @@
     windowManager.enable = lib.mkDefault true;
     # see ./themes/default.nix for theme defaults not mentioned here
     # theme.name = "catppuccin_gruvbox";
-    theme.name = "kanagawa_dragon";
+    theme.name = "vague";
   };
 }

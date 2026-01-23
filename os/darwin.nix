@@ -53,6 +53,7 @@
   # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
     stateVersion = 6;
+    primaryUser = vars.user.name;
     defaults = {
       dock = {
         autohide = true;
