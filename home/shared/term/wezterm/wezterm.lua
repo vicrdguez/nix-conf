@@ -89,7 +89,7 @@ config.mouse_bindings = {
 
 -- Using fish shell
 -- Spawn a fish shell in login mode
-config.default_prog = { '/Users/vrodriguez/.nix-profile/bin/fish', '-l' }
+config.default_prog = { '/Users/vrod/.nix-profile/bin/fish', '-l' }
 
 -- and finally, return the configuration to wezterm
 return config

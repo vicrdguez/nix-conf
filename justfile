@@ -19,7 +19,7 @@ dw-bootstrap:
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
     echo "Setting up nix-darwin"
-    nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake . 
+    sudo nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake . 
     # darwin-rebuild switch --flake .
     echo "Setting up home-manager"
     nix run home-manager/master -- switch --flake .
@@ -27,19 +27,19 @@ dw-bootstrap:
 
 [macos]
 dw-build: build
-    darwin-rebuild switch --flake .
+    sudo darwin-rebuild switch --flake .
 
 [macos]
 dw-switch: && switch
-    darwin-rebuild switch --flake .
+    sudo darwin-rebuild switch --flake .
 
 build-all: build
     home-manager switch --flake .
-    darwin-rebuild switch --flake .
+    sudo darwin-rebuild switch --flake .
 
 switch-all: && switch
     home-manager switch --flake .
-    darwin-rebuild switch --flake .
+    sudo darwin-rebuild switch --flake .
 
 build:
     -@git switch -c tmp &>/dev/null

@@ -131,7 +131,7 @@
                 bind "k" "Up" { MoveFocus "Up"; }
                 bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
                 bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-                bind "n" { NewPane; SwitchToMode "Normal"; }
+                bind "n" { NewPane "Right"; SwitchToMode "Normal"; }
                 bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
                 bind "x" { CloseFocus; SwitchToMode "Normal"; }
 
@@ -163,6 +163,7 @@
             compact-bar { path "compact-bar"; }
         }
 
+        show_startup_tips false
         default_shell "fish"
 
         // Toggle between having pane frames around the panes

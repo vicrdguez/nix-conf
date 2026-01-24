@@ -16,6 +16,7 @@
           font = "Iosevka 16";
           adjust-open = "best-fit";
           highlight-fg = "#000000";
+          # FIX Some themes do not have this attrs. making the build fail
           # highlight-color = colors.yellow_rgba "0.2";
           # highlight-active-color = colors.green_rgba "0.2";
           default-bg = colors.bg;

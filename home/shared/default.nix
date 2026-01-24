@@ -18,6 +18,7 @@
   xdg.enable = true;
 
   term.wezterm = true;
+  term.ghostty = true;
   cli = {
     # enable cli tools, all are enabled by default so this is more 
     # tailored to disable things
