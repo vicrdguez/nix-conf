@@ -21,8 +21,6 @@ with pkgs; [
   luajitPackages.magick
   imagemagick
   ueberzugpp
-  # to manage runtime versions
-  mise
   # use your preferred shell when using nix develop
   nix-your-shell
   # Java packaging
