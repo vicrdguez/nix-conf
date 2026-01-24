@@ -20,7 +20,8 @@
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ inputs.nvim-conf.overlays.default ];
+          # overlays = [ inputs.nvim-conf.overlays.default ];
+	  overlays = [ inputs.nvim-nightly.overlays.default ];
         });
     in
     {
@@ -61,5 +62,6 @@
       url = "github:vicrdguez/nvim-conf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
 }

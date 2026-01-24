@@ -57,6 +57,7 @@
   system = {
     primaryUser = "vrod"; # TODO make this configurable, will depend on the machine
     stateVersion = 6;
+    primaryUser = vars.user.name;
     defaults = {
       dock = {
         autohide = true;
