@@ -55,7 +55,7 @@
   };
   # Disable more animations: https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x
   system = {
-    primaryUser = "vrod"; # TODO make this configurable, will depend on the machine
+    # primaryUser = "vrod"; # TODO make this configurable, will depend on the machine
     stateVersion = 6;
     primaryUser = vars.user.name;
     defaults = {
