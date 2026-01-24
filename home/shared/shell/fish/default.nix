@@ -44,6 +44,7 @@ in
           # Some light theming
           set -g fish_color_command green
 
+	  ~/.local/bin/mise activate fish | source
           eval (zellij setup --generate-auto-start fish | string collect)
 
           nix-your-shell fish | source
